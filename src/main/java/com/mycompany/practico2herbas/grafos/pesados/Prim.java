@@ -63,7 +63,7 @@ public class Prim {
     }
     
     public String mostrarGrafoPrim() {
-        String grafoResultado = "";
+        String grafoResultado = "\n";
         for (int i = 0; i < this.grafoW.cantidadDeVertices(); i++) {
             grafoResultado = grafoResultado + "[" + i + "]" + "->";
             List<AdyacenteConPeso> adyacentesDeVertice = this.grafoW.listaDeAdyacencias.get(i);

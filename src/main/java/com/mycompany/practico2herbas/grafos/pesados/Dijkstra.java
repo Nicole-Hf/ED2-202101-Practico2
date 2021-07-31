@@ -105,10 +105,14 @@ public class Dijkstra {
     public void mostrarCostoYCamino(int verticePartida, int verticeDestino) throws ExcepcionAristaNoExiste {
         Dijkstra nuevoVertice = new Dijkstra(this.grafo,verticePartida);
         //List<Integer> camino = new ArrayList<>();
-        System.out.println("Camino de Costo Mínimo de " + verticePartida + " a " + verticeDestino + " -> " 
-                + nuevoVertice.caminoCostoMinimo(verticeDestino));
-        System.out.println("Costo Mínimo de " + verticePartida + " a " + verticeDestino + " -> " 
-                + nuevoVertice.costoMinimoDeAyB(verticeDestino));
+        if (nuevoVertice.costoMinimoDeAyB(verticeDestino) != INFINITO) {
+            System.out.println("Camino de Costo Mínimo de " + verticePartida + " a " + verticeDestino + " -> " 
+                    + nuevoVertice.caminoCostoMinimo(verticeDestino));       
+            System.out.println("Costo Mínimo de " + verticePartida + " a " + verticeDestino + " -> " 
+                    + nuevoVertice.costoMinimoDeAyB(verticeDestino));
+        } else {
+            System.out.println("No existe Camino de Costo Mínimo de " + verticePartida + " a " + verticeDestino);
+        }        
     }
     
     /**

@@ -30,7 +30,7 @@ public class TestGrafos {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws ExcepcionNroVerticesInvalido, ExcepcionAristaYaExiste, ExcepcionAristaNoExiste {
-        
+        /**GRAFO NO DIRIGIDO SIN PESO**/
         Grafo grafo = new Grafo(8);
         grafo.insertarArista(0, 1);
         grafo.insertarArista(1, 3);
@@ -41,38 +41,33 @@ public class TestGrafos {
         grafo.insertarArista(5, 7);
         grafo.insertarArista(6, 4);
         grafo.insertarArista(7, 6);
-        
-        DiGrafo diGrafo = new DiGrafo(8);
+        /**GRAFO DIRIGIDO SIN PESO**/
+        DiGrafo diGrafo = new DiGrafo(5);
         diGrafo.insertarArista(0, 1);
-        diGrafo.insertarArista(1, 2);
-        diGrafo.insertarArista(2, 3);
-        diGrafo.insertarArista(3, 2);
-        diGrafo.insertarArista(3, 7);
-        diGrafo.insertarArista(7, 3);
-        diGrafo.insertarArista(2, 6);
-        diGrafo.insertarArista(7, 6);
-        diGrafo.insertarArista(5, 6);
-        diGrafo.insertarArista(6, 5);  
-        diGrafo.insertarArista(1, 5);
-        diGrafo.insertarArista(4, 5);   
-        diGrafo.insertarArista(4, 0); 
-        diGrafo.insertarArista(1, 4);   
+        diGrafo.insertarArista(0, 2);
+        diGrafo.insertarArista(0, 3);
+        diGrafo.insertarArista(0, 4);
+        diGrafo.insertarArista(1, 3);
+        diGrafo.insertarArista(2, 1);
+        diGrafo.insertarArista(2, 4);
+        diGrafo.insertarArista(3, 4);           
         System.out.println("********PRÁCTICO 2********");
         System.out.println("1.Para un grafo no dirigido implementar el método de eliminar vértice: ");
+        System.out.println("***GRAFO NO DIRIGIDO***");
         System.out.println(grafo);
         System.out.println("---Eliminar vértice 3---");
-        //grafo.eliminarVertice(3);
+        grafo.eliminarVertice(3);
         System.out.println(grafo);
         System.out.println("2.Para un grafo dirigido implementar método o clase para encontrar si \n"
                 + "hay ciclos sin usar matriz de caminos: " 
                 + diGrafo.hayCiclo());
+        System.out.println("***GRAFO DIRIGIDO***");
         System.out.println(diGrafo);
         System.out.println("3.Para un grafo dirigido implementar un método o clase que sea capas \n"
                 + "de retornar los componentes de las islas que existen en dicho digrafo: ");
         diGrafo.componentesDeLasIslas();
         
-        
-        
+              
         System.out.println("7.Para un grafo dirigido implementar un algoritmo para encontrar si \n"
                 + "es débilmente conexo: " + diGrafo.esDebilmenteConexo());
         System.out.println("8.Para un grafo no dirigido implementar un algoritmo para encontrar \n"
@@ -105,6 +100,7 @@ public class TestGrafos {
         System.out.println("12.Para un grafo dirigido usando la implementación del algoritmo de \n"
                 + "Floyd-Wharsall encontrar los caminos de costo mínimo entre un vértice a y el \n"
                 + "resto. Mostrar los costos y cuáles son los caminos: ");
+        System.out.println("***GRAFO DIRIGIDO PESADO***");
         System.out.println(dgrafoPesado);
         FloydWarshall floyd = new FloydWarshall(dgrafoPesado);
         floyd.mostrarCostosYCaminos(0);
@@ -120,7 +116,7 @@ public class TestGrafos {
         Dijkstra dijkstra = new Dijkstra(dgrafoPesado,0);
         System.out.println("14.Para un grafo dirigido pesado implementar el algoritmo de Dijkstra que \n"
                 + "muestre cual es el camino de costo mínimo entre un vértice a y b y cual el costo: " );
-        dijkstra.mostrarCostoYCamino(0, 5);
+        dijkstra.mostrarCostoYCamino(0, 7);
         System.out.println("15. Para un grafo dirigido pesado implementar el algoritmo de Dijkstra que \n"
                 + "muestre con que vértices hay caminos de costo mínimo partiendo desde un vértice v, \n"
                 + "con qué costo y cuáles son los caminos: ");
@@ -146,12 +142,12 @@ public class TestGrafos {
         grafoPesado.insertarArista(6, 9, 6);
         grafoPesado.insertarArista(7, 9, 12);
         grafoPesado.insertarArista(8, 9, 7);
-        Prim prim = new Prim(grafoPesado,0);
-        System.out.println("----GRAFO PESADO----");
-        System.out.println(grafoPesado);
+        Prim prim = new Prim(grafoPesado,0);       
         System.out.println("17.Para un grafo no dirigido pesado implementar el algoritmo de Prim que \n"
                 + "muestre cual es el grafo encontrado por el algoritmo: " 
                 + prim.mostrarGrafoPrim());
+        System.out.println("----GRAFO PESADO----");
+        System.out.println(grafoPesado);
         System.out.println("18.Para un grafo dirigido implementar al algoritmo de ordenamiento \n"
                 + "topológico. Debe mostrar cual es el orden de los vértices según este algoritmo: " 
                 + ordenT.mostrarListaOrdenada());

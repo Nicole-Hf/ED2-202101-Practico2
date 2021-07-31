@@ -13,6 +13,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import recorridos.BFS;
 import recorridos.DFS;
 
 /**
@@ -21,6 +22,7 @@ import recorridos.DFS;
  */
 public class DiGrafo extends Grafo {
     protected DFS dfs;
+    protected BFS bfs;
     
     public DiGrafo() {
         super();
@@ -186,9 +188,6 @@ public class DiGrafo extends Grafo {
      * determinar desde que vértices se puede llegar a un vértice, pero 
      * sin ejecutar más de una vez un recorrido.
      */
-    public void pregunta4(int vertice) {
-        
-    }
     
     /**
      * 5. Para un grafo dirigido solo usando como base la lógica de un 
@@ -196,9 +195,6 @@ public class DiGrafo extends Grafo {
      * a un vértice a, sin importar las veces que ejecute el
      * recorrido elegido.
      */
-    public void pregunta5(int vertice) {
-        
-    }
     
     /**
      * 6. Para un grafo dirigido implementar un algoritmo para 
