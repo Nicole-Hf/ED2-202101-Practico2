@@ -67,19 +67,30 @@ public class TestGrafos {
         System.out.println("3.Para un grafo dirigido implementar un método o clase que sea capas \n"
                 + "de retornar los componentes de las islas que existen en dicho digrafo: ");
         diGrafo.componentesDeLasIslas();
-        
-              
+        System.out.println();
+        System.out.println("5.Para un grafo dirigido solo usando como base la lógica de un recorrido \n"
+                + "(dfs o bfs) encuentre desde que vértices se puede llegar a un vértice a, sin \n"
+                + "importar las veces que ejecute el recorrido elegido: ");
+        diGrafo.mostrarPregunta5(4);
+        System.out.println();
+        System.out.println("6.Para un grafo dirigido implementar un algoritmo para encontrar si el \n"
+                + "grafo dirigido tiene ciclos: " 
+                + diGrafo.tieneCiclos());
+        System.out.println();
         System.out.println("7.Para un grafo dirigido implementar un algoritmo para encontrar si \n"
                 + "es débilmente conexo: " + diGrafo.esDebilmenteConexo());
+        System.out.println();
         System.out.println("8.Para un grafo no dirigido implementar un algoritmo para encontrar \n"
                 + "que en que vértices del grafo hay ciclos: " 
                 + grafo.pregunta8());
         System.out.println("9.Para un grafo no dirigido implementar un algoritmo para encontrar el \n"
                 + "número de islas que hay en el grafo: " 
                 + grafo.nroDeIslas());
+        System.out.println();
         System.out.println("10.Para un grafo dirigido implementar un algoritmo para encontrar el \n"
                 + "número de islas que hay en el grafo: " 
                 + diGrafo.cantidadDeIslas());
+        System.out.println();
         AlgoritmoWarshall warshall = new AlgoritmoWarshall(diGrafo);
         System.out.println("11.Para un grafo dirigido implementar el algoritmo de Wharsall, que \n"
                 + "luego muestre entre que vértices hay camino: ");
@@ -114,15 +125,17 @@ public class TestGrafos {
                 + "desde w hasta v: " 
                 + componentes.nroDeComponentes(diGrafo) 
                 + "\nComponentes Fuertemente Conexas -> " + componentes.mostrarComponentes());
+        System.out.println();
         Dijkstra dijkstra = new Dijkstra(dgrafoPesado,0);
         System.out.println("14.Para un grafo dirigido pesado implementar el algoritmo de Dijkstra que \n"
                 + "muestre cual es el camino de costo mínimo entre un vértice a y b y cual el costo: " );
         dijkstra.mostrarCostoYCamino(0, 7);
+        System.out.println();
         System.out.println("15. Para un grafo dirigido pesado implementar el algoritmo de Dijkstra que \n"
                 + "muestre con que vértices hay caminos de costo mínimo partiendo desde un vértice v, \n"
                 + "con qué costo y cuáles son los caminos: ");
-        dijkstra.mostrarCaminosCostos(0);               
-        OrdenTopologico ordenT = new OrdenTopologico(diGrafo);
+        dijkstra.mostrarCaminosCostos(0);    
+        System.out.println();
         GrafoPesado grafoPesado = new GrafoPesado(10);
         grafoPesado.insertarArista(0, 1, 5);
         grafoPesado.insertarArista(0, 2, 10);
@@ -142,7 +155,9 @@ public class TestGrafos {
         grafoPesado.insertarArista(6, 8, 4);
         grafoPesado.insertarArista(6, 9, 6);
         grafoPesado.insertarArista(7, 9, 12);
-        grafoPesado.insertarArista(8, 9, 7);
+        grafoPesado.insertarArista(8, 9, 7);       
+        System.out.println("----GRAFO PESADO----");
+        System.out.println(grafoPesado);
         Kruskal kruskal = new Kruskal(grafoPesado);
         System.out.println("16.Para un grafo no dirigido pesado implementar el algoritmo de Kruskal \n"
                 + "que muestre cual es el grafo encontrado por el algoritmo: " 
@@ -151,11 +166,11 @@ public class TestGrafos {
         System.out.println("17.Para un grafo no dirigido pesado implementar el algoritmo de Prim que \n"
                 + "muestre cual es el grafo encontrado por el algoritmo: " 
                 + prim.mostrarGrafoPrim());
-        System.out.println("----GRAFO PESADO----");
-        System.out.println(grafoPesado);
+        OrdenTopologico ordenT = new OrdenTopologico(diGrafo);
         System.out.println("18.Para un grafo dirigido implementar al algoritmo de ordenamiento \n"
                 + "topológico. Debe mostrar cual es el orden de los vértices según este algoritmo: " 
                 + ordenT.mostrarListaOrdenada());
+        System.out.println();
         FordFulkerson ford = new FordFulkerson(dgrafoPesado);
         System.out.println("19.Para un grafo dirigido pesado implementar el algoritmo de Ford-Fulkerson: " 
                 + ford.fordFulkerson(dgrafoPesado, 6, 7));

@@ -10,9 +10,7 @@ import excepciones.ExcepcionAristaYaExiste;
 import excepciones.ExcepcionNroVerticesInvalido;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 import recorridos.BFS;
 import recorridos.DFS;
 
@@ -188,6 +186,13 @@ public class DiGrafo extends Grafo {
      * determinar desde que vértices se puede llegar a un vértice, pero 
      * sin ejecutar más de una vez un recorrido.
      */
+    public List<Integer> pregunta4(int verticeDestino) {
+        List<Integer> caminoAlVertice = new ArrayList<>();
+        if (this.gradoDeEntradaDelVertice(verticeDestino) > 0) {
+            
+        }
+        return caminoAlVertice;
+    }
     
     /**
      * 5. Para un grafo dirigido solo usando como base la lógica de un 
@@ -195,6 +200,29 @@ public class DiGrafo extends Grafo {
      * a un vértice a, sin importar las veces que ejecute el
      * recorrido elegido.
      */
+    public List<Iterable<Integer>> pregunta5(int verticeDestino) {       
+        Iterable<Integer> recorrido;
+        List<Iterable<Integer>> caminosAlVertice = new ArrayList<>();
+        for (int i = 0; i < this.listaDeAdyacencias.size(); i++) {
+            dfs = new DFS(this);
+            if (i != verticeDestino) {
+                dfs.procesarDFS(i);
+                if (dfs.controlMarcados.estaVerticeMarcado(verticeDestino)) {
+                    recorrido = dfs.elRecorrido();
+                    caminosAlVertice.add(recorrido);
+                }
+            }           
+        }
+        return caminosAlVertice;
+    } 
+    
+    public void mostrarPregunta5(int verticeDestino) {
+        List<Iterable<Integer>> caminosVertice = pregunta5(verticeDestino);
+        for (int i = 0; i < caminosVertice.size(); i++) {
+            System.out.println("Camino a " + verticeDestino 
+                    + " desde " + i + "->" + caminosVertice.get(i));
+        }
+    }
     
     /**
      * 6. Para un grafo dirigido implementar un algoritmo para 

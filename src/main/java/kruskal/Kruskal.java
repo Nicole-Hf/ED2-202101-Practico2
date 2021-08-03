@@ -7,12 +7,9 @@ package kruskal;
 
 import com.mycompany.practico2herbas.grafos.pesados.AdyacenteConPeso;
 import com.mycompany.practico2herbas.grafos.pesados.GrafoPesado;
-import excepciones.ExcepcionAristaNoExiste;
 import excepciones.ExcepcionAristaYaExiste;
 import excepciones.ExcepcionNroVerticesInvalido;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import recorridos.UtilsRecorridos;
 
 /**
@@ -68,7 +65,7 @@ public class Kruskal {
     }
 
     private boolean hayCiclo(int verticeOrigen, int verticeDestino) {
-        boolean resultado = true;
+        boolean resultado = false;
         Iterable<Integer> adyacentesDelOrigen = this.grafo.adyacentesDeVertice(verticeOrigen);
         for (Integer posAdyacente : adyacentesDelOrigen) {
             if (this.grafo.existeAdyacencia(verticeDestino, posAdyacente)) {
@@ -90,7 +87,4 @@ public class Kruskal {
         }
         return grafoResultante;
     }
-    
-    
-    
 }
