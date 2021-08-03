@@ -19,6 +19,7 @@ import com.mycompany.practico2herbas.grafos.pesados.Prim;
 import excepciones.ExcepcionAristaNoExiste;
 import excepciones.ExcepcionAristaYaExiste;
 import excepciones.ExcepcionNroVerticesInvalido;
+import kruskal.Kruskal;
 
 /**
  *
@@ -142,6 +143,10 @@ public class TestGrafos {
         grafoPesado.insertarArista(6, 9, 6);
         grafoPesado.insertarArista(7, 9, 12);
         grafoPesado.insertarArista(8, 9, 7);
+        Kruskal kruskal = new Kruskal(grafoPesado);
+        System.out.println("16.Para un grafo no dirigido pesado implementar el algoritmo de Kruskal \n"
+                + "que muestre cual es el grafo encontrado por el algoritmo: " 
+                + kruskal.mostrarGrafoKruskal());
         Prim prim = new Prim(grafoPesado,0);       
         System.out.println("17.Para un grafo no dirigido pesado implementar el algoritmo de Prim que \n"
                 + "muestre cual es el grafo encontrado por el algoritmo: " 

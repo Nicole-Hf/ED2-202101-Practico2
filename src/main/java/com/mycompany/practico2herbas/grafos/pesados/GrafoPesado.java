@@ -17,7 +17,7 @@ import java.util.List;
  * @author Nicole
  */
 public class GrafoPesado {
-    protected List<List<AdyacenteConPeso>> listaDeAdyacencias;
+    public List<List<AdyacenteConPeso>> listaDeAdyacencias;
     
     public GrafoPesado() {
         this.listaDeAdyacencias = new ArrayList<>();
